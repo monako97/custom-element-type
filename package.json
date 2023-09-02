@@ -1,0 +1,25 @@
+{
+  "name": "custom-element-type",
+  "version": "1.0.0",
+  "description": "将Props转换成web component对应的Props,开发时输出正确的类型提示",
+  "main": "index.d.ts",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monako97/custom-element-type.git"
+  },
+  "keywords": [
+    "web components",
+    "custom element",
+    "types"
+  ],
+  "author": "moneko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/monako97/custom-element-type/issues"
+  },
+  "homepage": "https://github.com/monako97/custom-element-type#readme"
+}
