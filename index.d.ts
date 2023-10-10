@@ -42,12 +42,15 @@ export type CustomElement<
   children?: any;
   style?: any;
 } & {
-  onKeyDown(e: KeyboardEvent): void;
   onMouseDown?(e: MouseEvent): void;
+  onMousMove?(e: MouseEvent): void;
+  onMouseUp?(e: MouseEvent): void;
+  onKeyDown?(e: KeyboardEvent): void;
   onKeyUp?(e: KeyboardEvent): void;
   onFocus?(e: FocusEvent): void;
   onBlur?(e: FocusEvent): void;
   onClick?(e: MouseEvent): void;
+  onDblClick?(e: MouseEvent): void;
   addEventListener?<K extends keyof AddEventMethods<T>>(
     name: K,
     callback: AddEventMethods<T>[K]
