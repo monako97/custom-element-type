@@ -37,11 +37,25 @@ export type CustomElement<
   shadowRoot?: ShadowRoot | Element | null;
   offsetWidth?: number;
   part?: string;
+  tabindex?: string | number;
+  tabIndex?: string | number;
+  children?: any;
+  style?: any;
 } & {
-  addEventListener?: <K extends keyof AddEventMethods<T>>(
+  onKeyDown(e: KeyboardEvent): void;
+  onMouseDown?(e: MouseEvent): void;
+  onKeyUp?(e: KeyboardEvent): void;
+  onFocus?(e: FocusEvent): void;
+  onBlur?(e: FocusEvent): void;
+  onClick?(e: MouseEvent): void;
+  addEventListener?<K extends keyof AddEventMethods<T>>(
     name: K,
     callback: AddEventMethods<T>[K]
-  ) => void;
+  ): void;
+  removeEventListener?<K extends keyof AddEventMethods<T>>(
+    name: K,
+    callback: AddEventMethods<T>[K]
+  ): void;
 };
 export type Hyphenate<T> = T extends `${infer First}${infer Rest}`
   ? Rest extends Uncapitalize<Rest>
