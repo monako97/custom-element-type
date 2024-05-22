@@ -41,6 +41,7 @@ export type CustomElement<
   tabIndex?: string | number;
   children?: any;
   style?: any;
+  classList?: any;
 } & {
   onMouseDown?(e: MouseEvent): void;
   onMousMove?(e: MouseEvent): void;
