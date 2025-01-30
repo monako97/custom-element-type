@@ -43,20 +43,20 @@ export type CustomElement<
   style?: any;
   classList?: any;
 } & {
-  onMouseDown: HTMLElement['onmousedown'];
-  onMousMove: HTMLElement['onmousemove'];
-  onMouseUp: HTMLElement['onmouseup'];
-  onKeyDown: HTMLElement['onkeydown'];
-  onKeyUp: HTMLElement['onkeyup'];
-  onFocus: HTMLElement['onfocus'];
-  onBlur: HTMLElement['onblur'];
-  onClick: HTMLElement['onclick'];
-  onDblClick: HTMLElement['ondblclick'];
-  appendChild: HTMLElement['appendChild'];
-  replaceChild: HTMLElement['replaceChild'];
-  replaceChildren: HTMLElement['replaceChildren'];
-  replaceWith: HTMLElement['replaceWith'];
-  remove: HTMLElement['remove'];
+  onMouseDown?(this: GlobalEventHandlers, ev: MouseEvent): any;
+  onMousMove?(this: GlobalEventHandlers, ev: MouseEvent): any;
+  onMouseUp?(this: GlobalEventHandlers, ev: MouseEvent): any;
+  onKeyDown?(this: GlobalEventHandlers, ev: KeyboardEvent): any;
+  onKeyUp?(this: GlobalEventHandlers, ev: KeyboardEvent): any;
+  onFocus?(this: GlobalEventHandlers, ev: FocusEvent): any;
+  onBlur?(this: GlobalEventHandlers, ev: FocusEvent): any;
+  onClick?(this: GlobalEventHandlers, ev: MouseEvent): any;
+  onDblClick?(this: GlobalEventHandlers, ev: MouseEvent): any;
+  appendChild?<T extends Node>(node: T): T;
+  replaceChild?<T extends Node>(node: Node, child: T): T;
+  replaceChildren?(...nodes: (Node | string)[]): void;
+  replaceWith?(...nodes: (Node | string)[]): void;
+  remove?(): void;
   addEventListener?<K extends keyof AddEventMethods<T>>(
     name: K,
     callback: AddEventMethods<T>[K]
@@ -65,6 +65,8 @@ export type CustomElement<
     name: K,
     callback: AddEventMethods<T>[K]
   ): void;
+  setAttribute?(qualifiedName: string, value: string): void;
+  removeAttribute?(qualifiedName: string): void;
 };
 export type Hyphenate<T> = T extends `${infer First}${infer Rest}`
   ? Rest extends Uncapitalize<Rest>
