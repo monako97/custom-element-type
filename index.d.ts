@@ -43,15 +43,20 @@ export type CustomElement<
   style?: any;
   classList?: any;
 } & {
-  onMouseDown?(e: MouseEvent): void;
-  onMousMove?(e: MouseEvent): void;
-  onMouseUp?(e: MouseEvent): void;
-  onKeyDown?(e: KeyboardEvent): void;
-  onKeyUp?(e: KeyboardEvent): void;
-  onFocus?(e: FocusEvent): void;
-  onBlur?(e: FocusEvent): void;
-  onClick?(e: MouseEvent): void;
-  onDblClick?(e: MouseEvent): void;
+  onMouseDown: HTMLElement['onmousedown'];
+  onMousMove: HTMLElement['onmousemove'];
+  onMouseUp: HTMLElement['onmouseup'];
+  onKeyDown: HTMLElement['onkeydown'];
+  onKeyUp: HTMLElement['onkeyup'];
+  onFocus: HTMLElement['onfocus'];
+  onBlur: HTMLElement['onblur'];
+  onClick: HTMLElement['onclick'];
+  onDblClick: HTMLElement['ondblclick'];
+  appendChild: HTMLElement['appendChild'];
+  replaceChild: HTMLElement['replaceChild'];
+  replaceChildren: HTMLElement['replaceChildren'];
+  replaceWith: HTMLElement['replaceWith'];
+  remove: HTMLElement['remove'];
   addEventListener?<K extends keyof AddEventMethods<T>>(
     name: K,
     callback: AddEventMethods<T>[K]

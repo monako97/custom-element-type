@@ -1,6 +1,6 @@
 {
   "name": "custom-element-type",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "将Props转换成web component对应的Props,开发时输出正确的类型提示",
   "main": "index.d.ts",
   "types": "index.d.ts",
